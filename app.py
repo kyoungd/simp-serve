@@ -62,3 +62,7 @@ def symbols():
         data = json.load(openfile)
     return data
 
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
