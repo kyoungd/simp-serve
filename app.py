@@ -67,7 +67,7 @@ def symbols():
 @app.route('/')
 @cross_origin()
 def get_home():
-    return {'status': 'success'}
+    return {'status': '200'}
 
 
 if __name__ == '__main__':
