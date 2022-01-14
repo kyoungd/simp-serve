@@ -64,6 +64,19 @@ def symbols():
     return data
 
 
+@app.route('/symbols', methods=['POST'])
+@cross_origin()
+def post_symbols():
+    jsonfile = JsonFavorite(filename='symbols.json', readJsonFile=False)
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json = request.json
+        jsonfile.WriteJson(json)
+        return {'status': 'success'}
+    else:
+        return {'status': 'Content-Type not supported!'}
+
+
 @app.route('/')
 @cross_origin()
 def get_home():
